@@ -1,0 +1,26 @@
+cb1:
+  image: camil/couchbase
+  restart: always
+  volumes:
+    - ~/couchbase/node1:/opt/couchbase/var
+  net: couchbase
+  hostname: cb1.example.com
+cb2:
+  image: camil/couchbase
+  restart: always
+  volumes:
+    - ~/couchbase/node2:/opt/couchbase/var
+  net: couchbase
+  hostname: cb2.example.com
+cb3:
+  image: camil/couchbase
+  restart: always
+  volumes:
+    - ~/couchbase/node3:/opt/couchbase/var
+  net: couchbase
+  hostname: cb3.example.com
+  ports:
+    - 8091:8091
+    - 8092:8092
+    - 8093:8093
+    - 11210:11210
